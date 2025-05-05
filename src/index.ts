@@ -5,7 +5,9 @@ import cors from 'cors';
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+	origin: 'https://conversor-brl.onrender.com'
+}));
 app.use(express.json());
 
 const cotacoes: Record<string, number> = {
